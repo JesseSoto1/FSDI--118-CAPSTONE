@@ -1,0 +1,191 @@
+/* style.css */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color: #fff;
+}
+
+body {
+    background-color: #000;
+    color: #fff;
+    font-family: Arial, sans-serif;
+    min-height: 100vh;
+}
+
+/* Navigation */
+nav {
+    background-color: #d99b9b;
+    padding: 20px;
+}
+
+nav a {
+    color: #000;
+    text-decoration: none;
+    margin-right: 20px;
+    font-weight: bold;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+/* Main content */
+main {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 20px;
+}
+
+/* Headings */
+h1, h2, h3 {
+    color: #fff;
+    margin-bottom: 20px;
+}
+
+/* White sections */
+.card {
+    background-color: #d99b9b;
+    color: #000;
+    padding: 25px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+}
+
+.card h2,
+.card h3 {
+    color: #000;
+}
+
+/* Buttons */
+.button {
+    background-color: #fff;
+    border-radius: 9999px;
+    color: #000;
+    border: 2px solid #fff;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-weight: bold;
+    width: 150px;             /* Forces horizontal size */
+    height: 48px;
+    display: inline-flex;     /* Helps center the text inside */
+    align-items: center;
+    justify-content: center;
+}
+
+.button:hover {
+    background-color: #000;
+    color: #fff;
+}
+
+/* Links */
+a {
+    color: #fff;
+}
+
+a:hover {
+    color: #ccc;
+}
+
+
+.create-page {
+max-width: 1600px;
+margin: 60px auto;
+padding: 40px;
+background-color: #111;
+border: 1px solid white;
+border-radius: 10px;
+
+}
+
+
+/* Page headings */
+.create-page h1 {
+color: white;
+text-align: center;
+margin-bottom: 30px;
+}
+
+/* Form layout */
+.create-form p {
+margin-bottom: 20px;
+}
+
+/* Form labels */
+.create-form label {
+display: block;
+color: white;
+font-weight: bold;
+margin-bottom: 8px;
+}
+
+/* Text inputs and message box */
+.create-form input,
+.create-form textarea {
+width: 100%;
+padding: 12px;
+background-color: white;
+color: black;
+border: 2px solid white;
+border-radius: 5px;
+font-size: 16px;
+font-family: Arial, sans-serif;
+}
+
+/* Text inside input fields */
+.contact-form input::placeholder,
+.contact-form textarea::placeholder {
+color: #555;
+}
+
+/* When clicking inside an input */
+.contact-form input,
+.contact-form textarea {
+outline: none;
+border: 2px solid #aaa;
+}
+
+/* Message box */
+.contact-form textarea {
+min-height: 150px;
+resize: vertical;
+}
+
+/* Buttons container */
+.contact-buttons {
+display: flex;
+justify-content: center;
+gap: 15px;
+margin-top: 25px;
+}
+
+/* Buttons */
+.contact-buttons button {
+padding: 12px 30px;
+background-color: white;
+color: black;
+border: 2px solid white;
+border-radius: 5px;
+font-weight: bold;
+cursor: pointer;
+transition: 0.2s;
+}
+
+/* Button hover */
+.contact-buttons button {
+background-color: black;
+color: white;
+}
+
+/* Reset button */
+.contact-buttons .reset-btn {
+background-color: #111;
+color: white;
+}
+
+/* Reset button hover */
+.contact-buttons .reset-btn {
+background-color: white;
+color: black;
+}

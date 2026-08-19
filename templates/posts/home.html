@@ -1,8 +1,16 @@
 {% extends 'base.html' %}
 
+{% block title %}{% endblock %}
 
 
 {% block content %}
+<h1>Home</h1>
+
+<div class="card">
+<a class="button" href="{% url 'create_post' %}">
+    New Post
+</a>
+</div>
 
 <div class="feed">
     <h1>Feed</h1>
@@ -39,5 +47,7 @@
 
 
 </div>
+
+
 
 {% endblock %}
