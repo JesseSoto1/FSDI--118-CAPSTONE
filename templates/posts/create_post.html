@@ -5,14 +5,14 @@
 
 {% block content %}
 <div class="create-page">
-    <form method="POST" enctype="multipart/form-data">
-        {% csrf_token %}
-        {{ form.as_p }}
+<form method="POST" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{ form.as_p }}
 
-        <button class="button" type="submit">
-            Post
-        </button>
-    </form>
+    <button class="button" type="submit">
+        Post
+    </button>
+</form>
 </div>
 
 {% endblock %}

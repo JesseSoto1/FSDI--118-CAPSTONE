@@ -19,11 +19,14 @@
             <p>
                 By {{ post.author.username }}
             </p>
-
+            
             <p>
                 {{ post.content }}
+                {% if post.image %}
+                    <img src="{{ post.image.url }}" alt="Post image">
+                {% endif %}
             </p>
-
+            
             <p>
                 Posted on {{ post.created_at }}
             </p>

@@ -4,59 +4,95 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    color: #fff;
+    
 }
 
 body {
-    background-color: #000;
-    color: #fff;
+    background-color:#e9b8f5;
+    color: #ffff;
     font-family: Arial, sans-serif;
     min-height: 100vh;
 }
 
 /* Navigation */
-nav {
-    background-color: #d99b9b;
-    padding: 20px;
+.navbar { 
+    width: 100%;
+    height: 70px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 0 40px;
+    box-sizing: border-box;
+
+    background: #070707;
+    color: #fff;
+
+    border-bottom: 1px solid #333;
+
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+
 }
 
-nav a {
-    color: #000;
+.navbar a {
+    color: #fff;
     text-decoration: none;
-    margin-right: 20px;
+    margin-left: 25px;
+
+    font-size: 16px;
+    font-weight: 500;
+
+    transition: 0.2s ease;
+}
+
+
+.navbar a:hover {
+    color: #aaa;
+}
+
+.navbar .logo {
+    font-size: 24px;
     font-weight: bold;
+    letter-spacing: 1px;
+    color: #fff;
 }
 
-nav a:hover {
-    text-decoration: underline;
+
+/* Footer */
+.footer { 
+    width: 100%;
+    height: 100px;
+
+    display: flex;
+    align-items:center;
+    justify-content: space-between;
+
+    padding: 0px 40px;
+
+
+    background: #111;
+    color: #fff;
+
+    border: 1px solid #2d2d2d;
+    border-radius: 16px;
+
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.5);
 }
 
-/* Main content */
-main {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 40px 20px;
+.footer a {
+    margin: 10px;
 }
 
 /* Headings */
 h1, h2, h3 {
     color: #fff;
-    margin-bottom: 20px;
+    margin: 20px;
 }
 
-/* White sections */
-.card {
-    background-color: #d99b9b;
-    color: #000;
-    padding: 25px;
-    margin-bottom: 20px;
-    border-radius: 8px;
-}
 
-.card h2,
-.card h3 {
-    color: #000;
-}
 
 /* Buttons */
 .button {
@@ -90,102 +126,64 @@ a:hover {
 
 
 .create-page {
-max-width: 1600px;
-margin: 60px auto;
-padding: 40px;
-background-color: #111;
-border: 1px solid white;
-border-radius: 10px;
-
+    max-width: 1600px;
+    margin: 60px auto;
+    padding: 40px;
+    background-color: #111;
+    border: 1px solid white;
+    border-radius: 10px;
+    display: inline-flex;     /* Helps center the text inside */
+    align-items: center;
+    justify-content: center;
 }
 
 
-/* Page headings */
-.create-page h1 {
-color: white;
-text-align: center;
-margin-bottom: 30px;
+.container {
+    width: 100%;
+    margin: 50px auto;
+    padding: 40px;
+
+    background: #181818;
+    color: #f5f5f5;
+
+    border: 1px solid #2d2d2d;
+    border-radius: 16px;
+
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.5);
 }
 
-/* Form layout */
-.create-form p {
-margin-bottom: 20px;
+.container form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
 }
 
-/* Form labels */
-.create-form label {
-display: block;
-color: white;
-font-weight: bold;
-margin-bottom: 8px;
+.container form p {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
 }
 
-/* Text inputs and message box */
-.create-form input,
-.create-form textarea {
-width: 100%;
-padding: 12px;
-background-color: white;
-color: black;
-border: 2px solid white;
-border-radius: 5px;
-font-size: 16px;
-font-family: Arial, sans-serif;
+.container form label {
+    color: white;
+    font-weight: 600;
 }
 
-/* Text inside input fields */
-.contact-form input::placeholder,
-.contact-form textarea::placeholder {
-color: #555;
+.container form input,
+.container form textarea,
+.container form select {
+    padding: 12px;
+    border: 1px solid #444;
+    border-radius: 8px;
+    background: #222;
+    color: white;
+    font-size: 16px;
+    box-sizing: border-box;
 }
 
-/* When clicking inside an input */
-.contact-form input,
-.contact-form textarea {
-outline: none;
-border: 2px solid #aaa;
-}
-
-/* Message box */
-.contact-form textarea {
-min-height: 150px;
-resize: vertical;
-}
-
-/* Buttons container */
-.contact-buttons {
-display: flex;
-justify-content: center;
-gap: 15px;
-margin-top: 25px;
-}
-
-/* Buttons */
-.contact-buttons button {
-padding: 12px 30px;
-background-color: white;
-color: black;
-border: 2px solid white;
-border-radius: 5px;
-font-weight: bold;
-cursor: pointer;
-transition: 0.2s;
-}
-
-/* Button hover */
-.contact-buttons button {
-background-color: black;
-color: white;
-}
-
-/* Reset button */
-.contact-buttons .reset-btn {
-background-color: #111;
-color: white;
-}
-
-/* Reset button hover */
-.contact-buttons .reset-btn {
-background-color: white;
-color: black;
+.container form input:focus,
+.container form textarea:focus,
+.container form select:focus {
+    outline: none;
+    border-color: white;
 }
