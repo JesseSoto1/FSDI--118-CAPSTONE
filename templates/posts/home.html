@@ -4,16 +4,22 @@
 
 
 {% block content %}
-<h1>Home</h1>
+<div class="container-home">
 
-<div class="card">
-<a class="button" href="{% url 'create_post' %}">
-    New Post
-</a>
+
+    <div class="card">
+    <a class="button" href="{% url 'create_post' %}"><i class="fa-solid fa-paintbrush"></i>
+        New Post
+    </a>
+    </div>
+    <div>
+        <a class="button" href="{% url 'post_list' %}"><i class="fa-solid fa-person-through-window"></i>
+            Feed
+        </a>
+    </div>
 </div>
 
-<div class="feed">
-    <h1>Feed</h1>
+<div class="container">
 
     {% for post in posts %}
 
@@ -22,18 +28,19 @@
                 <a href="{% url 'post_detail' post.pk %}">
                 {{ post.title }}
                 </a>
-            </h2
-
-            <p>
-                By {{ post.author.username }}
-            </p>
-
+            </h2>   
             <p>
                 {{ post.content }}
+                {% if post.image %}
+                <img width="300" src="{{ post.image.url }}" alt="Post image">
+                {% endif %}
             </p>
 
             <p>
                 Posted on {{ post.created_at }}
+            </p>
+            <p>
+                By {{ post.author.username }}
             </p>
         </article>
 
@@ -47,7 +54,12 @@
 
 
 </div>
-
+<div>
+    <form method="post" action="{% url 'logout' %}">
+    {% csrf_token %}
+    <button type="submit">Logout</button>
+</form>
+</div>
 
 
 {% endblock %}

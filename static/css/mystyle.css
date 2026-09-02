@@ -152,6 +152,15 @@ a:hover {
     box-shadow: 0 15px 40px rgba(0, 0, 0, 0.5);
 }
 
+.container-home{
+    width: 100%;
+    display: flex;
+    justify-content:space-evenly;
+    background-color: lightpink;
+    border-radius: 9999px;
+
+}
+
 .container form {
     display: flex;
     flex-direction: column;
