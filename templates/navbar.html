@@ -1,12 +1,13 @@
 <nav class="navbar">
-    <div>
-    <a href="{% url 'home' %}"><i class="fa-solid fa-truck-field-un"></i>uNFOLLWEd</a>
+    <div class="navbar-container">
+        <div class="nav-links">
+            <a href="{% url 'home' %}"><i class="fa-solid fa-truck-field-un"></i>uNFOLLWEd</a>
+            <a href="{% url 'home' %}"><i class="fa-brands fa-uncharted"></i>Home</a>
+                
+            <a href="{% url 'profile' %}"><i class="fa-solid fa-user-gear"></i>Profile</a>
+            <a href="#"><i class="fa-solid fa-atom"></i>Settings</a>
+        </div>
 
-    <div class="nav-links">
-        <a href="{% url 'home' %}"><i class="fa-brands fa-uncharted"></i>Home</a>
-            
-        <a href="{% url 'profile' %}"><i class="fa-solid fa-user-gear"></i>Profile</a>
-        <a href="#"><i class="fa-solid fa-atom"></i>Settings</a>
-    </div>
+        <h3>{{profile.user.username}}</h3>
     </div>
 </nav>

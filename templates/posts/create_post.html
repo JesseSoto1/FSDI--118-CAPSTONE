@@ -1,18 +1,42 @@
 {% extends 'base.html' %}
 {% load static %}
 
-{% block title %}{% endblock %}
+{% block title %}Create Post{% endblock %}
 
 {% block content %}
-<div class="create-page">
-<form method="POST" enctype="multipart/form-data">
-    {% csrf_token %}
-    {{ form.as_p }}
 
-    <button class="button" type="submit"><i class="fa-solid fa-paintbrush"></i>
-        Post
-    </button>
-</form>
+<div class="create-page">
+
+
+<div class="create-card">
+
+    <div class="create-header">
+        <h1>Create a Post</h1>
+        <p>Share something with the uNFOLLWEd community.</p>
+    </div>
+
+    <form method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+
+        <div class="create-form">
+            {{ form.as_p }}
+        </div>
+
+        <div class="create-buttons">
+            <button class="button" type="submit">
+                <i class="fa-solid fa-paintbrush"></i>
+                Post
+            </button>
+
+            <a class="cancel-button" href="{% url 'post_list' %}">
+                Cancel
+            </a>
+        </div>
+
+    </form>
+
+</div>
+
 </div>
 
 {% endblock %}

@@ -2,15 +2,42 @@
 {% load crispy_forms_tags %}
 
 {% block title %}
-    Sign Up Page
+Sign Up
 {% endblock %}
 
 {% block content %}
-    <h1>Sign Up Page</h1>
+
+<div class="signup-page">
+
+
+<div class="signup-card">
+
+    <div class="signup-header">
+        <h1>Join uNFOLLWEd</h1>
+        <p>Create your account and start posting.</p>
+    </div>
+
     <form method="post">
         {% csrf_token %}
-        {{ form | crispy }}
-        <input type="submit" value="Create" class="btn btn-success mb-4">
+
+        {{ form|crispy }}
+
+        <button type="submit" class="button signup-button">
+            <i class="fa-solid fa-user-plus"></i>
+            Create Account
+        </button>
     </form>
-    
+
+    <div class="signup-login">
+        <p>
+            Already have an account?
+            <a href="{% url 'login' %}">Log in</a>
+        </p>
+    </div>
+
+</div>
+
+
+</div>
+
 {% endblock %}

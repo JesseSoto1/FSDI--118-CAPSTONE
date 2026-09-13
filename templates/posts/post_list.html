@@ -5,40 +5,61 @@
 {% block content %}
 
 <div class="feed">
+
+
+<div class="feed-header">
     <h1>Feed</h1>
+    <p>See what everyone is talking about.</p>
+</div>
 
-    {% for post in posts %}
+{% for post in posts %}
 
-        <article>
-            <h2>
-                <a href="{% url 'post_detail' post.pk %}">
+    <article class="post-card">
+
+        <div class="post-header">
+            <div class="avatar">
+                {{ post.author.username|first|upper }}
+            </div>
+
+            <div class="post-user">
+                <strong>{{ post.author.username }}</strong>
+                <span>{{ post.created_at|date:"M d, Y • g:i A" }}</span>
+            </div>
+        </div>
+
+        <h2>
+            <a href="{% url 'post_detail' post.pk %}">
                 {{ post.title }}
-                </a>
-            </h2
+            </a>
+        </h2>
 
-            <p>
-                By {{ post.author.username }}
-            </p>
-            
-            <p>
-                {{ post.content }}
-                {% if post.image %}
-                    <img width="300" src="{{ post.image.url }}" alt="Post image">
-                {% endif %}
-            </p>
-            
-            <p>
-                Posted on {{ post.created_at }}
-            </p>
-        </article>
+        <div class="post-content">
+            <p>{{ post.content }}</p>
 
-        <hr>
+            {% if post.image %}
+                <img class="post-image"
+                    src="{{ post.image.url }}"
+                    alt="Post image">
+            {% endif %}
+        </div>
 
-    {% empty %}
+        <div class="post-footer">
+            <a class="read-more"
+                href="{% url 'post_detail' post.pk %}">
+                View post →
+            </a>
+        </div>
 
-        <p>No posts yet.</p>
+    </article>
 
-    {% endfor %}
+{% empty %}
+
+    <div class="empty-feed">
+        <h2>No posts yet.</h2>
+        <p>Be the first person to post something.</p>
+    </div>
+
+{% endfor %}
 
 
 </div>

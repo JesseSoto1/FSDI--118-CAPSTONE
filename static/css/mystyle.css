@@ -12,18 +12,24 @@ body {
     color: #ffff;
     font-family: Arial, sans-serif;
     min-height: 100vh;
+    display: flex;
+    flex-direction: column;
 }
+
+.base-container {
+    flex-grow: 1;
+}
+
 
 /* Navigation */
 .navbar { 
     width: 100%;
-    height: 70px;
+    height: 80px;
 
     display: flex;
     align-items: center;
     justify-content: space-between;
 
-    padding: 0 40px;
     box-sizing: border-box;
 
     background: #070707;
@@ -31,10 +37,20 @@ body {
 
     border-bottom: 1px solid #333;
 
+    padding: 20px;
+
     position: sticky;
     top: 0;
     z-index: 1000;
 
+}
+
+.navbar-container {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .navbar a {
@@ -60,17 +76,25 @@ body {
     color: #fff;
 }
 
+.navbar a i {
+    margin-right: 6px;
+}
+
+.navbar h3 {
+    margin: 0px;
+}
+
 
 /* Footer */
 .footer { 
     width: 100%;
-    height: 100px;
+    /* height: 100px; */
 
     display: flex;
     align-items:center;
     justify-content: space-between;
 
-    padding: 0px 40px;
+    padding: 20px;
 
 
     background: #111;
@@ -118,6 +142,7 @@ h1, h2, h3 {
 /* Links */
 a {
     color: #fff;
+    
 }
 
 a:hover {
@@ -127,7 +152,7 @@ a:hover {
 
 .create-page {
     max-width: 1600px;
-    margin: 60px auto;
+    margin: 80px;
     padding: 40px;
     background-color: #111;
     border: 1px solid white;
@@ -135,9 +160,62 @@ a:hover {
     display: inline-flex;     /* Helps center the text inside */
     align-items: center;
     justify-content: center;
+    
+
+}
+.home-img {
+    min-height: 700px;
+
+
+    background-image: url('/static/images/uNFOLLWEd.png');
+
+    background-size: cover;
+
+    background-position: center;
+
+    background-repeat: no-repeat;
+
+    border: 20px solid #111;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+
+}
+
+/* Login card */
+
+.login-page {
+    width: 100%;
+    max-width: 450px;
+    transform: translateX(-600px);
+}
+
+.login-card {
+    background: rgba(17, 17, 17, 0.94);
+
+
+    border: 1px solid #444;
+
+    border-radius: 22px;
+
+    padding: 35px;
+
+    box-shadow: 0 15px 45px rgba(0, 0, 0, 0.6);
+
+    backdrop-filter: blur(5px);
+
+
 }
 
 
+.signup-container {
+    border: 10px solid #111;
+    width: 60%;
+}
 .container {
     width: 100%;
     margin: 50px auto;
@@ -156,7 +234,7 @@ a:hover {
     width: 100%;
     display: flex;
     justify-content:space-evenly;
-    background-color: lightpink;
+    /* background-color: lightpink; */
     border-radius: 9999px;
 
 }
@@ -195,4 +273,1697 @@ a:hover {
 .container form select:focus {
     outline: none;
     border-color: white;
+}
+
+.home-submit-button-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+}
+
+/* .feed {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    background-color: #111;
+}
+
+.feed article {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.feed p {
+    display: flex;
+    flex-direction: column;
+} */
+.feed {
+    width: 100%;
+    max-width: 750px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+.feed-header {
+    margin-bottom: 30px;
+}
+
+.feed-header h1 {
+    font-size: 42px;
+    font-weight: 800;
+    margin: 0;
+    letter-spacing: -1px;
+}
+
+.feed-header p {
+    margin-top: 5px;
+    opacity: 0.65;
+}
+
+.post-card {
+    background: #111;
+    border: 1px solid #2d2d2d;
+    border-radius: 18px;
+    padding: 25px;
+    margin-bottom: 25px;
+
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.25);
+
+    transition: transform 0.2s ease,
+                box-shadow 0.2s ease,
+                border-color 0.2s ease;
+
+}
+
+.post-card {
+    transform: translateY(-3px);
+    border-color: #555;
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.4);
+}
+
+.post-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 20px;
+}
+
+.avatar {
+width: 45px;
+height: 45px;
+
+display: flex;
+align-items: center;
+justify-content: center;
+
+background: white;
+color: black;
+
+border-radius: 50%;
+
+font-size: 18px;
+font-weight: 800;
+
+}
+
+.post-user {
+display: flex;
+flex-direction: column;
+}
+
+.post-user strong {
+font-size: 15px;
+}
+
+.post-user span {
+font-size: 12px;
+opacity: 0.55;
+margin-top: 3px;
+}
+
+.post-card h2 {
+margin: 0 0 15px;
+font-size: 25px;
+line-height: 1.2;
+}
+
+.post-card h2 a {
+color: white;
+text-decoration: none;
+transition: opacity 0.2s ease;
+}
+
+.post-card h2 a {
+opacity: 0.65;
+}
+
+.post-content p {
+font-size: 16px;
+line-height: 1.7;
+color: #ddd;
+margin-bottom: 20px;
+}
+
+.post-image {
+display: block;
+
+width: 100%;
+max-height: 500px;
+
+object-fit: cover;
+
+border-radius: 14px;
+
+margin-top: 15px;
+
+border: 1px solid #333;
+
+}
+
+/* =========================
+FOOTER
+========================= */
+
+.post-footer {
+margin-top: 20px;
+padding-top: 15px;
+
+border-top: 1px solid #2c2c2c;
+
+}
+
+.read-more {
+color: white;
+text-decoration: none;
+
+font-size: 14px;
+font-weight: 700;
+
+transition: opacity 0.2s ease;
+
+}
+
+.read-more {
+opacity: 0.6;
+}
+
+/* =========================
+EMPTY FEED
+========================= */
+
+.empty-feed {
+text-align: center;
+
+padding: 60px 20px;
+
+border: 1px dashed #444;
+border-radius: 18px;
+
+}
+
+.empty-feed h2 {
+margin-bottom: 8px;
+}
+
+.empty-feed p {
+opacity: 0.6;
+}
+
+/* =========================
+MOBILE
+========================= */
+
+@media (max-width: 600px) {
+
+.feed {
+    margin: 25px auto;
+    padding: 0 12px;
+}
+
+.feed-header h1 {
+    font-size: 34px;
+}
+
+.post-card {
+    padding: 18px;
+    border-radius: 14px;
+}
+
+.post-card h2 {
+    font-size: 21px;
+}
+
+.post-content p {
+    font-size: 15px;
+}
+
+}
+
+/* =========================
+PROFILE PAGE
+========================= */
+
+.profile-page {
+width: 100%;
+max-width: 750px;
+margin: 50px auto;
+padding: 0 20px;
+}
+
+/* =========================
+PROFILE CARD
+========================= */
+
+.profile-container {
+background: #111;
+border: 1px solid #2d2d2d;
+
+
+border-radius: 22px;
+
+padding: 45px 30px;
+
+text-align: center;
+
+box-shadow: 0 10px 35px rgba(0, 0, 0, 0.3);
+
+
+}
+
+/* =========================
+PROFILE AVATAR
+========================= */
+
+.profile-avatar {
+width: 180px;
+height: 180px;
+
+
+object-fit: cover;
+
+border-radius: 50%;
+
+border: 4px solid white;
+
+margin-bottom: 20px;
+
+background: #222;
+
+
+}
+
+/* Default avatar when no image exists */
+
+.profile-avatar-default {
+display: flex;
+align-items: center;
+justify-content: center;
+
+
+margin-left: auto;
+margin-right: auto;
+
+background: white;
+color: black;
+
+font-size: 70px;
+font-weight: 800;
+
+
+}
+
+/* =========================
+USERNAME
+========================= */
+
+.profile-container h1 {
+margin: 5px 0 10px;
+
+
+font-size: 36px;
+font-weight: 800;
+
+letter-spacing: -1px;
+
+
+}
+
+/* =========================
+BIO
+========================= */
+
+.profile-bio {
+max-width: 500px;
+
+
+margin: 0 auto 25px;
+
+color: #d0d0d0;
+
+font-size: 16px;
+line-height: 1.6;
+
+
+}
+
+.profile-no-bio {
+opacity: 0.5;
+font-style: italic;
+}
+
+/* =========================
+UPDATE BUTTON
+========================= */
+
+.profile-update-btn {
+display: inline-block;
+
+
+background: white;
+color: black;
+
+padding: 11px 25px;
+
+border-radius: 999px;
+
+text-decoration: none;
+
+font-size: 14px;
+font-weight: 800;
+
+transition:
+    transform 0.2s ease,
+    background 0.2s ease,
+    color 0.2s ease;
+
+
+}
+
+.profile-update-btn:hover {
+background: #222;
+color: white;
+
+
+border: 1px solid #555;
+
+transform: translateY(-2px);
+
+
+}
+
+/* =========================
+MOBILE
+========================= */
+
+@media (max-width: 600px) {
+
+
+.profile-page {
+    margin: 25px auto;
+    padding: 0 12px;
+}
+
+.profile-container {
+    padding: 35px 20px;
+    border-radius: 999px;
+}
+
+.profile-avatar {
+    width: 140px;
+    height: 140px;
+}
+
+.profile-avatar-default {
+    font-size: 55px;
+}
+
+.profile-container h1 {
+    font-size: 30px;
+}
+
+
+}
+
+/* =========================
+PROFILE UPDATE PAGE
+========================= */
+
+.profile-update-page {
+width: 100%;
+max-width: 650px;
+margin: 50px auto;
+padding: 0 20px;
+}
+
+/* =========================
+UPDATE CARD
+========================= */
+
+.profile-update-card {
+background: #111;
+border: 1px solid #2d2d2d;
+
+
+border-radius: 22px;
+
+padding: 35px;
+
+box-shadow: 0 10px 35px rgba(0, 0, 0, 0.3);
+
+
+
+
+}
+
+/* =========================
+HEADER
+========================= */
+
+.profile-update-header {
+margin-bottom: 30px;
+}
+
+.profile-update-header h1 {
+margin: 0;
+
+
+font-size: 34px;
+font-weight: 800;
+
+letter-spacing: -1px;
+
+
+}
+
+.profile-update-header p {
+margin-top: 8px;
+
+
+color: #999;
+
+font-size: 14px;
+
+
+}
+
+/* =========================
+FORM
+========================= */
+
+.profile-update-card form label {
+color: white;
+
+
+font-weight: 600;
+
+margin-bottom: 7px;
+
+
+}
+
+/* Text inputs */
+
+.profile-update-card input[type="text"],
+.profile-update-card input[type="email"],
+.profile-update-card input[type="file"],
+.profile-update-card textarea,
+.profile-update-card select {
+background: white;
+color: black;
+
+
+border: 1px solid #555;
+
+border-radius: 10px;
+
+padding: 11px 13px;
+
+width: 100%;
+
+transition: border-color 0.2s ease,
+            box-shadow 0.2s ease;
+
+
+}
+
+/* Focus */
+
+.profile-update-card input:focus,
+.profile-update-card textarea:focus,
+.profile-update-card select:focus {
+border-color: white;
+
+
+box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.1);
+
+outline: none;
+
+
+}
+
+/* Textarea */
+
+.profile-update-card textarea {
+min-height: 130px;
+
+
+resize: vertical;
+
+
+}
+
+/* Help text */
+
+.profile-update-card .form-text {
+color: #777 !important;
+
+
+font-size: 12px;
+
+
+}
+
+/* Error messages */
+
+.profile-update-card .invalid-feedback {
+color: #ff8a8a;
+}
+
+/* =========================
+BUTTONS
+========================= */
+
+.profile-form-buttons {
+display: flex;
+
+
+align-items: center;
+
+gap: 12px;
+
+margin-top: 30px;
+
+
+}
+
+/* Save */
+
+.profile-save-btn {
+background: white;
+color: black;
+
+
+border: none;
+
+padding: 12px 25px;
+
+border-radius: 999px;
+
+font-size: 14px;
+font-weight: 800;
+
+cursor: pointer;
+
+transition: transform 0.2s ease,
+            background 0.2s ease;
+
+
+}
+
+.profile-save-btn:hover {
+background: #ddd;
+
+
+transform: translateY(-2px);
+
+
+}
+
+/* Cancel */
+
+.profile-cancel-btn {
+color: white;
+
+
+border: 1px solid #444;
+
+padding: 11px 23px;
+
+border-radius: 999px;
+
+text-decoration: none;
+
+font-size: 14px;
+font-weight: 700;
+
+transition: background 0.2s ease,
+            border-color 0.2s ease;
+
+
+}
+
+.profile-cancel-btn:hover {
+background: #222;
+
+
+border-color: #666;
+
+
+}
+
+/* =========================
+MOBILE
+========================= */
+
+@media (max-width: 600px) {
+
+
+.profile-update-page {
+    margin: 25px auto;
+    padding: 0 12px;
+}
+
+.profile-update-card {
+    padding: 25px 20px;
+
+    border-radius: 18px;
+}
+
+.profile-update-header h1 {
+    font-size: 28px;
+}
+
+.profile-form-buttons {
+    flex-direction: column;
+
+    align-items: stretch;
+}
+
+.profile-save-btn,
+.profile-cancel-btn {
+    width: 100%;
+
+    text-align: center;
+}
+
+
+}
+
+/* =========================
+CURRENT PROFILE PICTURE
+========================= */
+
+.current-profile-picture {
+text-align: center;
+margin-bottom: 30px;
+}
+
+.current-profile-picture img {
+width: 140px;
+height: 140px;
+
+
+object-fit: cover;
+
+border-radius: 50%;
+
+border: 4px solid white;
+
+display: block;
+margin: 0 auto 10px;
+
+
+}
+
+.current-profile-picture p {
+color: #888;
+
+
+font-size: 13px;
+
+margin: 0;
+
+
+}
+
+/* =========================
+HOME PAGE
+========================= */
+
+.home-page {
+width: 100%;
+max-width: 900px;
+margin: 50px auto;
+padding: 0 20px;
+}
+
+/* =========================
+HOME BUTTONS
+========================= */
+
+.container-home {
+display: flex;
+justify-content: center;
+align-items: center;
+
+
+gap: 15px;
+
+margin-bottom: 45px;
+
+
+}
+
+.button {
+display: inline-flex;
+align-items: center;
+justify-content: center;
+
+
+gap: 9px;
+
+background: white;
+color: black;
+
+border: none;
+border-radius: 999px;
+
+padding: 12px 22px;
+
+font-size: 14px;
+font-weight: 800;
+
+text-decoration: none;
+
+cursor: pointer;
+
+transition:
+    transform 0.2s ease,
+    background 0.2s ease;
+
+
+}
+
+.button:hover {
+background: #ddd;
+
+
+color: black;
+
+transform: translateY(-2px);
+
+
+}
+
+/* Logout form */
+
+.container-home form {
+margin: 0;
+}
+
+.logout-button {
+font-family: inherit;
+}
+
+/* =========================
+POSTS
+========================= */
+
+.home-posts {
+display: flex;
+flex-direction: column;
+gap: 25px;
+}
+
+/* =========================
+POST CARD
+========================= */
+
+.home-post-card {
+background: #111;
+
+
+border: 1px solid #2d2d2d;
+
+border-radius: 20px;
+
+padding: 25px;
+
+box-shadow: 0 8px 25px rgba(0, 0, 0, 0.25);
+
+transition:
+    transform 0.2s ease,
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+
+
+}
+
+.home-post-card:hover {
+transform: translateY(-3px);
+
+
+border-color: #555;
+
+box-shadow: 0 12px 35px rgba(0, 0, 0, 0.4);
+
+
+}
+
+/* =========================
+POST TITLE
+========================= */
+
+.home-post-card h2 {
+margin: 0 0 15px;
+
+
+font-size: 25px;
+
+line-height: 1.2;
+
+
+}
+
+.home-post-card h2 a {
+color: white;
+
+
+text-decoration: none;
+
+
+}
+
+.home-post-card h2 a:hover {
+opacity: 0.65;
+}
+
+/* =========================
+POST CONTENT
+========================= */
+
+.home-post-content {
+color: #ddd;
+
+
+font-size: 16px;
+
+line-height: 1.7;
+
+margin-bottom: 20px;
+
+
+}
+
+/* =========================
+POST IMAGE
+========================= */
+
+.home-post-image {
+display: block;
+
+
+width: 100%;
+max-height: 450px;
+
+object-fit: cover;
+
+border-radius: 15px;
+
+border: 1px solid #333;
+
+margin-bottom: 20px;
+
+
+}
+
+/* =========================
+POST INFO
+========================= */
+
+.home-post-info {
+display: flex;
+
+
+justify-content: space-between;
+
+border-top: 1px solid #2d2d2d;
+
+padding-top: 15px;
+
+color: #888;
+
+font-size: 13px;
+
+
+}
+
+.home-post-info span {
+display: flex;
+
+
+align-items: center;
+
+gap: 6px;
+
+
+}
+
+/* =========================
+NO POSTS
+========================= */
+
+.no-posts {
+text-align: center;
+
+
+padding: 60px 20px;
+
+border: 1px dashed #444;
+
+border-radius: 20px;
+
+
+}
+
+.no-posts h2 {
+margin-bottom: 8px;
+}
+
+.no-posts p {
+color: #777;
+}
+
+/* =========================
+MOBILE
+========================= */
+
+@media (max-width: 600px) {
+
+
+.home-page {
+    margin: 25px auto;
+    padding: 0 12px;
+}
+
+.container-home {
+    flex-direction: column;
+
+    gap: 10px;
+
+    margin-bottom: 30px;
+}
+
+.container-home .button {
+    width: 100%;
+}
+
+.home-post-card {
+    padding: 18px;
+
+    border-radius: 16px;
+}
+
+.home-post-card h2 {
+    font-size: 21px;
+}
+
+.home-post-info {
+    flex-direction: column;
+
+    gap: 8px;
+}
+
+
+}
+
+/* =========================
+CREATE POST PAGE
+========================= */
+
+.create-page {
+width: 100%;
+max-width: 700px;
+
+
+margin: 50px auto;
+
+padding: 0 20px;
+
+
+}
+
+/* =========================
+CREATE CARD
+========================= */
+
+.create-card {
+background: #111;
+
+
+border: 1px solid #2d2d2d;
+
+border-radius: 22px;
+
+padding: 35px;
+
+box-shadow: 0 10px 35px rgba(0, 0, 0, 0.3);
+
+
+}
+
+/* =========================
+HEADER
+========================= */
+
+.create-header {
+margin-bottom: 30px;
+}
+
+.create-header h1 {
+margin: 0;
+
+
+font-size: 34px;
+
+font-weight: 800;
+
+letter-spacing: -1px;
+
+
+}
+
+.create-header p {
+color: #888;
+
+
+font-size: 14px;
+
+margin-top: 8px;
+
+
+}
+
+/* =========================
+FORM
+========================= */
+
+.create-form label {
+display: block;
+
+
+color: white;
+
+font-weight: 600;
+
+margin-bottom: 7px;
+
+
+}
+
+.create-form input[type="text"],
+.create-form input[type="file"],
+.create-form textarea,
+.create-form select {
+width: 100%;
+
+
+background: white;
+
+color: black;
+
+border: 1px solid #555;
+
+border-radius: 10px;
+
+padding: 11px 13px;
+
+font-family: inherit;
+
+transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+
+
+}
+
+/* Focus */
+
+.create-form input:focus,
+.create-form textarea:focus,
+.create-form select:focus {
+outline: none;
+
+
+border-color: white;
+
+box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.1);
+
+
+}
+
+/* Content box */
+
+.create-form textarea {
+min-height: 180px;
+
+
+resize: vertical;
+
+
+}
+
+/* File input */
+
+.create-form input[type="file"] {
+cursor: pointer;
+
+
+padding: 9px;
+
+
+}
+
+/* Help text */
+
+.create-form .helptext,
+.create-form .form-text {
+color: #777;
+
+
+font-size: 12px;
+
+
+}
+
+/* =========================
+BUTTONS
+========================= */
+
+.create-buttons {
+display: flex;
+
+
+align-items: center;
+
+gap: 12px;
+
+margin-top: 30px;
+
+
+}
+
+/* Cancel */
+
+.cancel-button {
+color: white;
+
+
+border: 1px solid #444;
+
+padding: 11px 23px;
+
+border-radius: 999px;
+
+text-decoration: none;
+
+font-size: 14px;
+
+font-weight: 700;
+
+transition:
+    background 0.2s ease,
+    border-color 0.2s ease;
+
+
+}
+
+.cancel-button:hover {
+background: #222;
+
+
+border-color: #666;
+
+
+}
+
+/* =========================
+MOBILE
+========================= */
+
+@media (max-width: 600px) {
+
+
+.create-page {
+    margin: 25px auto;
+
+    padding: 0 12px;
+}
+
+.create-card {
+    padding: 25px 20px;
+
+    border-radius: 999px;
+}
+
+.create-header h1 {
+    font-size: 28px;
+}
+
+.create-buttons {
+    flex-direction: column;
+
+    align-items: stretch;
+}
+
+.create-buttons .button,
+.cancel-button {
+    width: 100%;
+
+    text-align: center;
+}
+
+
+}
+
+/* =========================
+SIGN UP PAGE
+========================= */
+
+.signup-page {
+width: 100%;
+max-width: 550px;
+
+
+margin: 50px auto;
+
+padding: 0 20px;
+
+
+}
+
+/* =========================
+SIGN UP CARD
+========================= */
+
+.signup-card {
+background: #111;
+
+
+border: 1px solid #2d2d2d;
+
+border-radius: 22px;
+
+padding: 35px;
+
+box-shadow: 0 10px 35px rgba(0, 0, 0, 0.3);
+
+
+}
+
+/* =========================
+HEADER
+========================= */
+
+.signup-header {
+text-align: center;
+
+
+margin-bottom: 30px;
+
+
+}
+
+.signup-header h1 {
+margin: 0;
+
+
+font-size: 34px;
+
+font-weight: 800;
+
+letter-spacing: -1px;
+
+
+}
+
+.signup-header p {
+color: #888;
+
+
+font-size: 14px;
+
+margin-top: 8px;
+
+
+}
+
+/* =========================
+FORM
+========================= */
+
+.signup-card label {
+color: white;
+
+
+font-weight: 600;
+
+margin-bottom: 7px;
+
+
+}
+
+.signup-card input[type="text"],
+.signup-card input[type="email"],
+.signup-card input[type="password"] {
+width: 100%;
+
+
+background: white;
+
+color: black;
+
+border: 1px solid #555;
+
+border-radius: 10px;
+
+padding: 11px 13px;
+
+font-family: inherit;
+
+transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+
+
+}
+
+/* Focus */
+
+.signup-card input:focus {
+outline: none;
+
+
+border-color: white;
+
+box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.1);
+
+
+}
+
+/* Help text */
+
+.signup-card .form-text {
+color: #777 !important;
+
+
+font-size: 12px;
+
+
+}
+
+/* Error messages */
+
+.signup-card .invalid-feedback {
+color: #ff8a8a;
+}
+
+/* =========================
+SIGN UP BUTTON
+========================= */
+
+.signup-button {
+width: 100%;
+
+
+margin-top: 15px;
+
+
+}
+
+/* =========================
+LOGIN LINK
+========================= */
+
+.signup-login {
+text-align: center;
+
+
+margin-top: 25px;
+
+padding-top: 20px;
+
+border-top: 1px solid #2d2d2d;
+
+
+}
+
+.signup-login p {
+color: #777;
+
+
+font-size: 14px;
+
+margin: 0;
+
+
+}
+
+.signup-login a {
+color: white;
+
+
+font-weight: 700;
+
+text-decoration: none;
+
+
+}
+
+.signup-login a:hover {
+text-decoration: underline;
+}
+
+/* =========================
+MOBILE
+========================= */
+
+@media (max-width: 600px) {
+
+
+.signup-page {
+    margin: 25px auto;
+
+    padding: 0 12px;
+}
+
+.signup-card {
+    padding: 25px 20px;
+
+    border-radius: 18px;
+}
+
+.signup-header h1 {
+    font-size: 28px;
+}
+
+
+}
+/* =========================
+LOGIN PAGE
+========================= */
+
+.login-page {
+width: 100%;
+max-width: 550px;
+
+
+margin: 50px auto;
+
+padding: 0 20px;
+
+
+}
+
+/* =========================
+LOGIN CARD
+========================= */
+
+.login-card {
+background: #111;
+
+
+border: 1px solid #2d2d2d;
+
+border-radius: 22px;
+
+padding: 35px;
+
+box-shadow: 0 10px 35px rgba(0, 0, 0, 0.3);
+
+
+}
+
+/* =========================
+HEADER
+========================= */
+
+.login-header {
+text-align: center;
+
+
+margin-bottom: 30px;
+
+
+}
+
+.login-header h1 {
+margin: 0;
+
+
+font-size: 34px;
+
+font-weight: 800;
+
+letter-spacing: -1px;
+
+
+}
+
+.login-header p {
+color: #888;
+
+
+font-size: 14px;
+
+margin-top: 8px;
+
+
+}
+
+/* =========================
+FORM
+========================= */
+
+.login-card label {
+color: white;
+
+
+font-weight: 600;
+
+margin-bottom: 7px;
+
+
+}
+
+.login-card input[type="text"],
+.login-card input[type="password"] {
+width: 100%;
+
+
+background: white;
+
+color: black;
+
+border: 1px solid #555;
+
+border-radius: 10px;
+
+padding: 11px 13px;
+
+font-family: inherit;
+
+transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+
+
+}
+
+/* Focus */
+
+.login-card input:focus {
+outline: none;
+
+
+border-color: white;
+
+box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.1);
+
+
+}
+
+/* =========================
+LOGIN BUTTON
+========================= */
+
+.login-button {
+width: 100%;
+
+
+margin-top: 15px;
+
+
+}
+
+/* =========================
+SIGN UP LINK
+========================= */
+
+.login-signup {
+text-align: center;
+
+
+margin-top: 25px;
+
+padding-top: 20px;
+
+border-top: 1px solid #2d2d2d;
+
+
+}
+
+.login-signup p {
+color: #777;
+
+
+font-size: 14px;
+
+margin: 0;
+
+
+}
+
+.login-signup a {
+color: white;
+
+
+font-weight: 700;
+
+text-decoration: none;
+
+
+}
+
+.login-signup a:hover {
+text-decoration: underline;
+}
+
+/* =========================
+MOBILE
+========================= */
+
+@media (max-width: 600px) {
+
+
+.login-page {
+    margin: 25px auto;
+
+    padding: 0 12px;
+}
+
+.login-card {
+    background: rgba(17, 17, 17, 0.20);
+
+
+    border: 1px solid rgba(255, 255, 255, 0.4);
+
+    border-radius: 22px;
+
+    padding: 35px;
+
+    box-shadow: 0 15px 45px rgba(0, 0, 0, 0.6);
+
+    backdrop-filter: blur(3px);
+
+
+}
+
+
+.login-header h1 {
+    font-size: 28px;
+}
+
+
 }

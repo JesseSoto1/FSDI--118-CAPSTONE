@@ -1,65 +1,83 @@
 {% extends 'base.html' %}
 
-{% block title %}{% endblock %}
-
+{% block title %}Home{% endblock %}
 
 {% block content %}
+
+<div class="home-page">
+
+
 <div class="container-home">
 
-
-    <div class="card">
-    <a class="button" href="{% url 'create_post' %}"><i class="fa-solid fa-paintbrush"></i>
+    <a class="button" href="{% url 'create_post' %}">
+        <i class="fa-solid fa-paintbrush"></i>
         New Post
     </a>
-    </div>
-    <div>
-        <a class="button" href="{% url 'post_list' %}"><i class="fa-solid fa-person-through-window"></i>
-            Feed
-        </a>
-    </div>
+
+    <a class="button" href="{% url 'post_list' %}">
+        <i class="fa-solid fa-person-through-window"></i>
+        Feed
+    </a>
+
+    <form method="post" action="{% url 'logout' %}">
+        {% csrf_token %}
+        <button class="button logout-button" type="submit">
+            <i class="fa-solid fa-right-from-bracket"></i>
+            Logout
+        </button>
+    </form>
+
 </div>
 
-<div class="container">
+
+<div class="home-posts">
 
     {% for post in posts %}
 
-        <article>
+        <article class="home-post-card">
+
             <h2>
                 <a href="{% url 'post_detail' post.pk %}">
-                {{ post.title }}
+                    {{ post.title }}
                 </a>
-            </h2>   
-            <p>
+            </h2>
+
+            <p class="home-post-content">
                 {{ post.content }}
-                {% if post.image %}
-                <img width="300" src="{{ post.image.url }}" alt="Post image">
-                {% endif %}
             </p>
 
-            <p>
-                Posted on {{ post.created_at }}
-            </p>
-            <p>
-                By {{ post.author.username }}
-            </p>
+            {% if post.image %}
+                <img class="home-post-image"
+                    src="{{ post.image.url }}"
+                    alt="Post image">
+            {% endif %}
+
+            <div class="home-post-info">
+                <span>
+                    <i class="fa-solid fa-user"></i>
+                    {{ post.author.username }}
+                </span>
+
+                <span>
+                    <i class="fa-regular fa-clock"></i>
+                    {{ post.created_at|date:"M d, Y" }}
+                </span>
+            </div>
+
         </article>
-
-        <hr>
 
     {% empty %}
 
-        <p>No posts yet.</p>
+        <div class="no-posts">
+            <h2>No posts yet.</h2>
+            <p>Be the first person to post something.</p>
+        </div>
 
     {% endfor %}
 
-
-</div>
-<div>
-    <form method="post" action="{% url 'logout' %}">
-    {% csrf_token %}
-    <button type="submit">Logout</button>
-</form>
 </div>
 
+
+</div>
 
 {% endblock %}

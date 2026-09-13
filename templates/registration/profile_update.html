@@ -1,15 +1,46 @@
 {% extends 'base.html' %}
-{% load static %}
+{% load crispy_forms_tags %}
 
 {% block content %}
 
+<div class="profile-update-page">
 
-<body>
 
-    <h1>This is profile updated page</h1>
+<div class="profile-update-card">
 
-    
+    {% if user.profile.avatar %} 
+    <div class="current-profile-picture"> 
+    <img src="{{ user.profile.avatar.url }}"alt="Current profile picture"> 
+    <p>Current profile picture</p> </div>
 
-</body>
+{% endif %}
+
+    <div class="profile-update-header">
+        <h1>Update Profile</h1>
+        <p>Change your username, bio, or avatar.</p>
+    </div>
+
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+
+        {{ p_form|crispy }}
+        {{ u_form|crispy }}
+
+        <div class="profile-form-buttons">
+            <input type="submit"
+                    value="Update Profile"
+                    class="profile-save-btn">
+
+            <a href="{% url 'profile' %}" class="profile-cancel-btn">
+                Cancel
+            </a>
+        </div>
+
+    </form>
+
+</div>
+
+
+</div>
 
 {% endblock %}
